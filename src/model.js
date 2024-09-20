@@ -1,11 +1,11 @@
 import { DataTypes, Model } from "sequelize";
 import connectToDb from "./db.js";
 import url from 'url';
-import util from 'utiil'
+import util from 'util'
 
 const db = await connectToDb('postgresql:///users')
 
-class Users extends Model {
+class User extends Model {
     [util.inspect.custom] () {
         return this.toJSON()
     }
@@ -45,7 +45,7 @@ User.init({
   }
 )
 
-class Events extends Model {
+class Event extends Model {
     [util.inspect.custom] () {
     return this.toJSON()
     }
@@ -65,12 +65,12 @@ Event.init({
   }
 )
 
-class PurchasedEvents extends Model {
+class PurchasedEvent extends Model {
     [util.inspect.custom] () {
         return this.toJSON()
     }
 }
-purchasedEvent.init({
+PurchasedEvent.init({
     eventId:{
         type: DataTypes.STRING,
         primaryKey: true
@@ -90,4 +90,4 @@ if (process.argv[1] === url.fileURLToPath(import.meta.url)) {
     console.log("Finished syncing database.")
 }
 
-export { Users, Events, PurchasedEvents }
+export { User, Event, PurchasedEvent }
