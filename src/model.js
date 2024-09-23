@@ -36,6 +36,7 @@ User.init({
 
     email: DataTypes.STRING,
     streetAddress: DataTypes.STRING,
+    city: DataTypes.STRING,
 
     state: {
         type: DataTypes.STRING(2),
@@ -102,6 +103,7 @@ async function seedDatabase() {
             password: 'boromir',
             email: 'lofimusicguy@gmail.com',
             streetAddress: '123 Main St',
+            city: 'Lehi',
             state: 'CA',
             zipCode: '90210',
             birthdate: '1990-07-04'
@@ -114,6 +116,7 @@ async function seedDatabase() {
             password: 'byurocks',
             email: 'byuchels@gmail.com',
             streetAddress: '456 Oak St',
+            city: 'Provo',
             state: 'UT',
             zipCode: '84601',
             birthdate: '1983-10-31'
@@ -126,6 +129,7 @@ async function seedDatabase() {
             password: 'RaffyTaffy',
             email: 'rraeder@gmail.com',
             streetAddress: '1589 Grizzly Way',
+            city: 'Elk Ridge',
             state: 'UT',
             zipCode: '84651',
             birthdate: '1982-11-11'
