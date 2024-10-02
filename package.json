@@ -3,8 +3,10 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "proxy": "http://localhost:5001"
+
   "scripts": {
-    "dev": "vite",
+    "dev": "nodemon server.js -w server.js -w src",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
@@ -21,8 +23,10 @@
     "pg-hstore": "^2.3.4",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.2",
     "sequelize": "^6.37.3",
-    "stripe": "^11.8.0"
+    "stripe": "^11.8.0",
+    "vite-express": "^0.19.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",
