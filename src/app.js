@@ -1,5 +1,6 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom'
+import HomePage from './components/Home.jsx'
 import Login from './components/Login'
 import Register from './components/Register'
 import Account from './components/Account'

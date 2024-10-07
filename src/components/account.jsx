@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const Account = () => {
   const [user, setUser] = useState(null)
+  const navigate = useNavigate()
 
   useEffect(() => {
     fetch('/api/users/me', {
@@ -11,15 +13,14 @@ const Account = () => {
     })
       .then((res) => {
         if (res.status === 401) {
-          // Token expired or invalid
           localStorage.removeItem('token')
-          window.location.href = '/login'
+          navigate('/login')
         }
         return res.json()
       })
       .then((data) => setUser(data))
       .catch((err) => console.error(err))
-  }, [])
+  }, [navigate])
 
   if (!user) return <div>Loading...</div>
 
@@ -27,10 +28,11 @@ const Account = () => {
     <div>
       <h1>Welcome, {user.firstName} {user.lastName}</h1>
       <p>Email: {user.email}</p>
-      {/* Display other account details */}
+      <button onClick={() => navigate('/payment')}>Make a Payment</button>
     </div>
   )
 }
 
 export default Account
+
 

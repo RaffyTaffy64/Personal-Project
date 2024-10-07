@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const Events = () => {
   const [events, setEvents] = useState([])
+  const navigate = useNavigate()
 
   useEffect(() => {
     fetchEvents()
@@ -16,9 +18,8 @@ const Events = () => {
       })
 
       if (res.status === 401) {
-        // Token expired or invalid
         localStorage.removeItem('token')
-        window.location.href = '/login'
+        navigate('/login')
       }
 
       const data = await res.json()
@@ -38,8 +39,6 @@ const Events = () => {
         },
         body: JSON.stringify({ eventId }),
       })
-
-      const data = await res.json()
 
       if (res.status === 200) {
         alert('Event purchased successfully!')
@@ -67,4 +66,5 @@ const Events = () => {
 }
 
 export default Events
+
 

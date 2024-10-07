@@ -66,3 +66,289 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+/* Home Container Styling */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url('./assets/BackgroundImage.png'); /* Add your background image */
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  color: white;
+}
+
+/* Header Styling */
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.logo {
+  max-width: 150px; /* Adjust as needed */
+}
+
+/* Main Content Styling */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* SPARK Heading Styling */
+.spark-heading {
+  font-size: 60px;
+  font-weight: bold;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  position: relative;
+  display: inline-block;
+}
+
+.spark-heading::after {
+  content: ' ';
+  width: 80px;
+  height: 4px;
+  background-color: white;
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  transform: translateX(-50%);
+}
+
+/* Event Info Styling */
+.event-info {
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+.live-text {
+  font-weight: bold;
+  color: #00b4ff; /* DevMountain branding color */
+}
+
+/* Button Group */
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btn {
+  background-color: #00b4ff;
+  color: white;
+  font-size: 18px;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  width: 200px;
+}
+
+.btn:hover {
+  background-color: #008ecc;
+}
+
+.register-btn {
+  background-color: #00b4ff; /* Blue button */
+}
+
+.login-btn {
+  background-color: transparent;
+  border: 2px solid white;
+}
+
+/* Container Styling */
+.register-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url('./assets/BackgroundImage.png'); /* Add background image */
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  color: white;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.logo {
+  max-width: 150px;
+}
+
+/* Form Container Styling */
+.form-container {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 40px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  color: white;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Form Field Styling */
+input, select {
+  padding: 15px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  background: #f0f0f0;
+  color: black;
+}
+
+label {
+  font-size: 14px;
+  text-align: left;
+}
+
+h3 {
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+/* Button Styling */
+.btn {
+  background-color: #00b4ff;
+  color: white;
+  font-size: 18px;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.submit-btn:hover {
+  background-color: #008ecc;
+}
+
+/* Container Styling */
+.payment-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url('./assets/BackgroundImage.png'); /* Add background image */
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  color: white;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.logo {
+  max-width: 150px;
+}
+
+/* Form Container Styling */
+.form-container {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 40px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  color: white;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.payment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Form Field Styling */
+input, select {
+  padding: 15px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  background: #f0f0f0;
+  color: black;
+}
+
+label {
+  font-size: 14px;
+  text-align: left;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-container input {
+  margin-right: 10px;
+}
+
+.total-amount {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  margin: 20px 0;
+}
+
+/* Button Styling */
+.btn {
+  background-color: #00b4ff;
+  color: white;
+  font-size: 18px;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.finish-btn:hover {
+  background-color: #008ecc;
+}
