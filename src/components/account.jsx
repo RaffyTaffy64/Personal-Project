@@ -6,20 +6,34 @@ const Account = () => {
   const navigate = useNavigate()
 
   useEffect(() => {
+    const token = localStorage.getItem('token')
+    if (!token) {
+      navigate('/login') // Redirect to login if no token
+      return
+    }
+
     fetch('/api/users/me', {
       headers: {
-        'Authorization': `Bearer ${localStorage.getItem('token')}`,
+        'Authorization': `Bearer ${token}`,
       },
     })
       .then((res) => {
         if (res.status === 401) {
-          localStorage.removeItem('token')
-          navigate('/login')
+          localStorage.removeItem('token') // Clear token if unauthorized
+          navigate('/login') // Redirect to login
         }
         return res.json()
       })
-      .then((data) => setUser(data))
-      .catch((err) => console.error(err))
+      .then((data) => {
+        if (data.error) {
+          console.error(data.error)
+        } else {
+          setUser(data) // Save user data
+        }
+      })
+      .catch((err) => {
+        console.error('Failed to fetch user data:', err)
+      })
   }, [navigate])
 
   if (!user) return <div>Loading...</div>
@@ -34,5 +48,6 @@ const Account = () => {
 }
 
 export default Account
+
 
 
