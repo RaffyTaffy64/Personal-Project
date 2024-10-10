@@ -1,20 +1,23 @@
-import bcrypt from 'bcryptjs'
+import bcryptjs from 'bcryptjs'
 import jwt from 'jsonwebtoken'
 import { User } from '../models/index.js'
 
 export const register = async (req, res) => {
 
-  const { firstName, lastName, email, password } = req.body
+  const { firstName, lastName, email, password, state } = req.body
 
+  console.log(req.body)
+  
   try {
-    const salt = bcrypt.genSaltSync(10);
-    const hashedPassword = bcrypt.hashSync(password, salt)
+    const salt = bcryptjs.genSaltSync(10);
+    const hashedPassword = bcryptjs.hashSync(password, salt)
 
     const user = await User.create({
       firstName,
       lastName,
       email,
       password: hashedPassword,
+      state,
     })
 
     res.status(201).json({ userId: user.userId, message: 'User registered successfully' })

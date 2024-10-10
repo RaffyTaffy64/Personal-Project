@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import '../index.css'
+import axios from 'axios'
 
 const Register = () => {
   const navigate = useNavigate()
@@ -27,25 +28,22 @@ const handleSubmit = async (e) => {
     state,
     zipCode,
     birthdate,
-  };
+  }
 
   try {
-    const response = await fetch('/api/register', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(formData),
-    });
+    const response = await axios.post('/api/register', formData);
 
-    const data = await response.json();
+    console.log(response.data)
+    // const data = await response.json()
 
-    if (response.ok) {
-      localStorage.setItem('token', data.token);
+    if (response.status === 201) {
+      localStorage.setItem('id', response.data.userId)
       navigate('/Payment') // Navigate to Payment page
     } else {
-      setErrorMessage(data.error || 'Registration failed');
+      setErrorMessage(res.data.message || 'Registration failed')
     }
   } catch (error) {
-    console.error('Error:', error);
+    console.error('Error:', error)
     setErrorMessage('Something went wrong. Please try again.')
   }
 }

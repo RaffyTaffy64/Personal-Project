@@ -6,35 +6,38 @@ const Account = () => {
   const navigate = useNavigate()
 
   useEffect(() => {
-    const token = localStorage.getItem('token');
-    if (!token) {
-      navigate('/Login'); // Redirect to login if no token
-      return;
+    const userId = localStorage.getItem('id')
+    if (!userId) {
+      navigate('/Login') // Redirect to login if no token
+      return
     }
   
     fetch('/api/users/me', {
       headers: {
-        'Authorization': `Bearer ${token}`,
+        'Authorization': `Bearer ${id}`,
       },
     })
-    .then((res) => {
-      if (res.status === 401) {
-        localStorage.removeItem('token'); // Clear token if unauthorized
-        navigate('/Login'); // Redirect to login
-      }
-      return res.json();
-    })
-    .then((data) => {
-      if (data.error) {
-        console.error(data.error);
-      } else {
-        setUser(data); // Save user data
-      }
-    })
-    .catch((err) => {
-      console.error('Failed to fetch user data:', err);
-    });
+      .then((res) => {
+        if (!res.ok) {
+          return res.text().then(text => {
+            console.error('Error response:', text) // Log the response text for debugging
+            throw new Error('Failed to fetch user data')
+          })
+        }
+        return res.json()
+      })
+      .then((data) => {
+        if (data.error) {
+          console.error(data.error);
+        } else {
+          setUser(data); // Save user data
+        }
+      })
+      .catch((err) => {
+        console.error('Failed to fetch user data:', err)
+      })
   }, [navigate])
+  
 
   if (!user) return <div>Loading...</div>
 

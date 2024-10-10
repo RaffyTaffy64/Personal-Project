@@ -14,7 +14,7 @@ app.use(cors())
 app.use(express.json())
 
   app.post(
-    '/register',
+    '/api/register',
     register
   )
   

@@ -9,7 +9,7 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault()
     try {
-      const res = await fetch('/api/auth/login', {
+      const res = await fetch('/api/auth/Login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -26,7 +26,7 @@ const Login = () => {
         alert(data.error || 'Login failed')
       }
     } catch (error) {
-      console.error('Error during login:', error)
+      // console.error('Error during login:', error)
     }
   }
 
