@@ -11,20 +11,17 @@ import Payment from './components/Payment.jsx'
 import Register from './components/Register.jsx'
 import ErrorPage from './components/ErrorPage.jsx'
 
-
-
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />} errorElement={<ErrorPage />}>
       <Route index element={<Home />} />
-      <Route path="login" element={<Login />} />
-      <Route path="account" element={<Account />} />
-      <Route path="payment" element={<Payment />} />
-      <Route path="register" element={<Register />} />
+      <Route path="Login" element={<Login />} />
+      <Route path="/Account" element={<Account />} />
+      <Route path="/Payment" element={<Payment />} />
+      <Route path="/Register" element={<Register />} />
     </Route>
   )
 )
-
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

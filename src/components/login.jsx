@@ -21,7 +21,7 @@ const Login = () => {
 
       if (res.status === 200) {
         localStorage.setItem('token', data.token)
-        navigate('/account')
+        navigate('/Account')
       } else {
         alert(data.error || 'Login failed')
       }

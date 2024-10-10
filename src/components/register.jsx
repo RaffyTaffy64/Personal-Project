@@ -15,40 +15,41 @@ const Register = () => {
   const [birthdate, setBirthdate] = useState('')
   const [errorMessage, setErrorMessage] = useState('') // State for error handling
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const formData = {
-      firstName,
-      lastName,
-      password,
-      email,
-      streetAddress,
-      city,
-      state,
-      zipCode,
-      birthdate,
-    }
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  const formData = {
+    firstName,
+    lastName,
+    password,
+    email,
+    streetAddress,
+    city,
+    state,
+    zipCode,
+    birthdate,
+  };
 
-    try {
-      const response = await fetch('/api/register', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      });
-      
-      const data = await response.json()
-      
-      if (response.ok) {
-        localStorage.setItem('token', data.token) // Save the token to localStorage
-        navigate('/account') // Redirect to Account page
-      } else {
-        setErrorMessage(data.error || 'Registration failed') // Set error message from response or default
-      }
-    } catch (error) {
-      console.error('Error:', error)
-      setErrorMessage('Something went wrong. Please try again.')
+  try {
+    const response = await fetch('/api/register', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData),
+    });
+
+    const data = await response.json();
+
+    if (response.ok) {
+      localStorage.setItem('token', data.token);
+      navigate('/Payment') // Navigate to Payment page
+    } else {
+      setErrorMessage(data.error || 'Registration failed');
     }
+  } catch (error) {
+    console.error('Error:', error);
+    setErrorMessage('Something went wrong. Please try again.')
   }
+}
+
 
   return (
     <div className="register-container">

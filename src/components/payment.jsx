@@ -26,10 +26,10 @@ const Payment = () => {
     })
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     console.log(formData)
-    navigate('/account')
+    navigate('/Account')
   }
 
   return (
