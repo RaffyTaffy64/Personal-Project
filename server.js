@@ -16,7 +16,7 @@ app.use(session({
     secret: 'your-secret-key',
     resave: false,
     saveUninitialized: true,
-    cookie: { secure: false } 
+    // cookie: { secure: false } 
 }))
 
 app.post('/api/register', register)

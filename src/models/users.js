@@ -27,7 +27,7 @@ User.init({
         allowNull: false,
     },
 }, {
-    modelName: 'User',
+    modelName: 'user',
     sequelize: db,
 })
 
