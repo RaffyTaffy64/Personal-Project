@@ -24,15 +24,20 @@ const Account = () => {
     }, [navigate])
 
     if (!user) return <div>Loading...</div>
+    
     return (
         <div>
             <h1>Welcome, {user.firstName} {user.lastName}</h1>
             <p>ID: {user.userId}</p>
+            <button onClick={() => navigate('/events')}>
+                Purchase Events
+            </button>
         </div>
     )
 }
 
 export default Account
+
 
 
 

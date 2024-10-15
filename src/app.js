@@ -9,7 +9,7 @@ import Events from './components/Events'
 const PrivateRoute = ({ children }) => {
   const token = localStorage.getItem('token')
   return token ? children : <Navigate to="/login" />
-};
+}
 
 function App() {
   return (
@@ -40,3 +40,4 @@ function App() {
 }
 
 export default App
+

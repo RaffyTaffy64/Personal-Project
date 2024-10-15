@@ -10,19 +10,29 @@ const Events = () => {
   }, [])
 
   const fetchEvents = async () => {
+    const token = localStorage.getItem('token')
+    if (!token) {
+      navigate('/login')
+      return
+    }
+
     try {
       const res = await fetch('/api/events', {
         headers: {
-          'Authorization': `Bearer ${localStorage.getItem('token')}`,
+          'Authorization': `Bearer ${token}`,
         },
       })
+
+      console.log('Response status:', res.status)
 
       if (res.status === 401) {
         localStorage.removeItem('token')
         navigate('/login')
+        return
       }
 
       const data = await res.json()
+      console.log('Fetched events:', data)
       setEvents(data)
     } catch (error) {
       console.error('Error fetching events:', error)
@@ -66,5 +76,6 @@ const Events = () => {
 }
 
 export default Events
+
 
 
