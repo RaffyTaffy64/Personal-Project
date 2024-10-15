@@ -1,47 +1,35 @@
 import { DataTypes, Model } from 'sequelize'
-import util from 'util'
 import db from '../config/db.js'
 
-class User extends Model {
-  [util.inspect.custom]() {
-    return this.toJSON()
-  }
-}
+class User extends Model {}
 
 User.init({
-  userId: {
-    type: DataTypes.INTEGER,
-    primaryKey: true,
-    autoIncrement: true
-  },
-  firstName: {
-    type: DataTypes.STRING,
-    allowNull: false,
-  },
-  lastName: {
-    type: DataTypes.STRING,
-    allowNull: false,
-  },
-  password: {
-    type: DataTypes.STRING,
-    allowNull: false,
-  },
-  email: {
-    type: DataTypes.STRING,
-    unique: true,
-  },
-  streetAddress: DataTypes.STRING,
-  city: DataTypes.STRING,
-  state: {
-    type: DataTypes.STRING(2),
-    allowNull: false,
-    defaultValue: 'CA',
-  },
-  zipCode: DataTypes.STRING,
-  birthdate: DataTypes.STRING,
+    userId: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true
+    },
+    firstName: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    lastName: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    password: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    email: {
+        type: DataTypes.STRING,
+        unique: true,
+        allowNull: false,
+    },
 }, {
-  modelName: 'users',
-  sequelize: db,
+    modelName: 'User',
+    sequelize: db,
 })
 
 export default User
+

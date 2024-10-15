@@ -3,42 +3,37 @@ import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
 const Account = () => {
-  const [user, setUser] = useState(null)
-  const navigate = useNavigate()
+    const [user, setUser] = useState(null)
+    const navigate = useNavigate()
 
-  useEffect(() => {
-    const userId = localStorage.getItem('id');
-    if (!userId) {
-      navigate('/Login') // Redirect to login if no userId
-      return;
-    }
-
-    axios.get('/api/users/me')
-      .then((res) => {
-        const data = res.data // Access the data from the response
-        console.log(data)
-        if (data.error) {
-          console.error(data.error)
-        } else {
-          setUser(data) // Save user data
+    useEffect(() => {
+        const userId = localStorage.getItem('id')
+        if (!userId) {
+            navigate('/login') // Redirect to login if no userId
+            return
         }
-      })
-      .catch((err) => {
-        console.error('Failed to fetch user data:', err)
-      })
-  }, [navigate])
 
-  if (!user) return <div>Loading...</div>
+        axios.get('/api/users/me')
+            .then((res) => {
+                setUser(res.data) // Save user data
+            })
+            .catch((err) => {
+                console.error('Failed to fetch user data:', err)
+                navigate('/login') // Redirect on error
+            })
+    }, [navigate])
 
-  return (
-    <div>
-      <h1>Welcome, {user.firstName} {user.lastName}</h1>
-      <p>ID: {user.userId}</p>
-    </div>
-  )
+    if (!user) return <div>Loading...</div>
+    return (
+        <div>
+            <h1>Welcome, {user.firstName} {user.lastName}</h1>
+            <p>ID: {user.userId}</p>
+        </div>
+    )
 }
 
 export default Account
+
 
 
 
