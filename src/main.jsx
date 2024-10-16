@@ -8,6 +8,7 @@ import Home from './components/Home.jsx'
 import Login from './components/Login.jsx'
 import Account from './components/Account.jsx'
 import Payment from './components/Payment.jsx'
+import Events from './components/Events.jsx'
 import Register from './components/Register.jsx'
 import ErrorPage from './components/ErrorPage.jsx'
 
@@ -19,6 +20,7 @@ const router = createBrowserRouter(
       <Route path="/Account" element={<Account />} />
       <Route path="/Payment" element={<Payment />} />
       <Route path="/Register" element={<Register />} />
+      <Route path="/Events" element={<Events />} />
     </Route>
   )
 )

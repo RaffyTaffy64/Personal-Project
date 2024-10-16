@@ -16,7 +16,6 @@ const Login = () => {
                 navigate('/account') // Redirect to Account page
             }
         } catch (error) {
-            // console.error('Error during login:', error)
             alert('Login failed')
         }
     }
@@ -33,6 +32,3 @@ const Login = () => {
 }
 
 export default Login
-
-
-

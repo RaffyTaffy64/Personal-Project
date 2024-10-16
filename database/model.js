@@ -63,14 +63,40 @@ Event.init({
         primaryKey: true,
     },
 
-    eventTitle: DataTypes.STRING,
-    price: DataTypes.INTEGER,
-    startTime: DataTypes.STRING,
-    endTime: DataTypes.STRING,
+    eventTitle: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    
+    speaker: {
+        type: DataTypes.STRING,
+        allowNull: true,
+    },
+    
+    location: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    
+    startTime: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    
+    endTime: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+
+    day: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
 }, {
     modelName: 'events',
     sequelize: db,
 })
+
 
 class PurchasedEvent extends Model {
     [util.inspect.custom]() {

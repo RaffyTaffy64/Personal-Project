@@ -5,6 +5,7 @@ import db from './src/config/db.js'
 import { register, login } from './src/controllers/authController.js'
 import session from 'express-session'
 import ViteExpress from 'vite-express'
+import { getAllEvents } from './src/controllers/eventController.js'
 
 dotenv.config()
 const app = express()
@@ -21,6 +22,7 @@ app.use(session({
 
 app.post('/api/register', register)
 app.post('/api/auth/login', login)
+app.get('/api/events', getAllEvents)
 app.get('/api/users/me', (req, res) => {
     if (req.session.user) {
         res.status(200).json(req.session.user)

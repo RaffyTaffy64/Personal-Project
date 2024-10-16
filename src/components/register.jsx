@@ -18,7 +18,6 @@ const Register = () => {
                 navigate('/account') // Redirect to Account page
             }
         } catch (error) {
-            console.error('Registration error:', error)
             alert('Registration failed')
         }
     }
@@ -39,8 +38,3 @@ const Register = () => {
 }
 
 export default Register
-
-
-
-
-

@@ -24,7 +24,7 @@ const Account = () => {
     }, [navigate])
 
     if (!user) return <div>Loading...</div>
-    
+
     return (
         <div>
             <h1>Welcome, {user.firstName} {user.lastName}</h1>
@@ -37,10 +37,4 @@ const Account = () => {
 }
 
 export default Account
-
-
-
-
-
-
 
