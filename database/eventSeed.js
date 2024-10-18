@@ -33,21 +33,20 @@ const events = [
     },
     {
         eventID: 4,
-        eventTitle: 'Special Guest Speakers',
-        startTime: '6:00 PM',
-        endTime: '8:30 PM',
-        speaker: 'Elon Musk and Mark Zuckerberg',
-        location: 'Grand Ballroom',
-        day: 'Thursday',
-        price: 100
-    },
-    {
-        eventID: 5,
         eventTitle: 'General Session',
         startTime: '10:00 AM',
         endTime: '12:00 PM',
         speaker: 'Erica Guarneri',
         location: 'Grand Ballroom',
+        day: 'Friday'
+    },
+    {
+        eventID: 5,
+        eventTitle: 'Regional Meetings',
+        startTime: '4:00 PM',
+        endTime: '6:00 PM',
+        speaker: 'Area Executives',
+        location: 'Various Halls',
         day: 'Friday'
     },
     {
@@ -62,12 +61,13 @@ const events = [
     },
     {
         eventID: 7,
-        eventTitle: 'Regional Meetings',
-        startTime: '4:00 PM',
-        endTime: '6:00 PM',
-        speaker: 'Area Executives',
-        location: 'Various Halls',
-        day: 'Friday'
+        eventTitle: 'Special Guest Speakers',
+        startTime: '6:00 PM',
+        endTime: '8:30 PM',
+        speaker: 'Elon Musk and Mark Zuckerberg',
+        location: 'Grand Ballroom',
+        day: 'Thursday',
+        price: 100
     },
     {
         eventID: 8,

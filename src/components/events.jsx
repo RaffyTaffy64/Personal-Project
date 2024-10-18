@@ -53,7 +53,7 @@ console.log(events)
                 {events.map((event) => (
                     <li key={event.eventId}>
                         {event.eventTitle} - ${event.price}
-                        <button onClick={() => handlePurchase(event.eventId)}>Purchase</button>
+                      {event.price && <button onClick={() => handlePurchase(event.eventId)}>Purchase</button>}
                     </li>
                 ))}
             </ul>
