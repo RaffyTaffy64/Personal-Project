@@ -9,14 +9,15 @@ class PurchasedEvent extends Model {
 }
 
 PurchasedEvent.init({
-  eventId: {
-    type: DataTypes.STRING,
+  purchasedEventId: {
+    type: DataTypes.INTEGER,
     primaryKey: true,
+    autoIncrement: true,
   },
   eventTitle: DataTypes.STRING,
   price: DataTypes.INTEGER,
 }, {
-  modelName: 'purchasedEvents',
+  modelName: 'purchased_event',
   sequelize: db,
 })
 

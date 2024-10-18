@@ -59,8 +59,9 @@ class Event extends Model {
 
 Event.init({
     eventId: {
-        type: DataTypes.STRING,
+        type: DataTypes.INTEGER,
         primaryKey: true,
+        autoIncrement: true,
     },
 
     eventTitle: {

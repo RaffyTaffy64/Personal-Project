@@ -10,8 +10,9 @@ class Event extends Model {
 
 Event.init({
   eventId: {
-    type: DataTypes.STRING,
+    type: DataTypes.INTEGER,
     primaryKey: true,
+    autoIncrement: true,
   },
   eventTitle: {
     type: DataTypes.STRING,
@@ -19,7 +20,7 @@ Event.init({
   },
   price: {
     type: DataTypes.INTEGER,
-    allowNull: false,
+    allowNull: true,
   },
   startTime: DataTypes.STRING,
   endTime: DataTypes.STRING,

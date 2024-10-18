@@ -10,7 +10,8 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "start": "node src/index.js",
-    "backend:dev": "nodemon src/index.js"
+    "backend:dev": "nodemon src/index.js",
+    "seed": "node database/eventSeed.js"
   },
   "dependencies": {
     "axios": "^1.7.7",

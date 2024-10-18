@@ -31,15 +31,9 @@ console.log(res)
     }
 console.log(events)
     const handlePurchase = async (eventId) => {
+      console.log('MISTAKE')
         try {
-            const res = await fetch('/api/events/purchase', {
-                method: 'POST',
-                headers: {
-                    'Authorization': `Bearer ${localStorage.getItem('token')}`,
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ eventId }),
-            })
+            const res = await axios.post('/api/events/purchase', {eventId})
 
             if (res.status === 200) {
                 alert('Event purchased successfully!')
@@ -47,6 +41,7 @@ console.log(events)
                 alert('Error purchasing event')
             }
         } catch (error) {
+            alert('Error purchasing event')
             console.error('Error during purchase:', error)
         }
     }

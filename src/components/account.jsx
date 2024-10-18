@@ -15,13 +15,14 @@ const Account = () => {
 
         axios.get('/api/users/me')
             .then((res) => {
+              console.log(res.data)
                 setUser(res.data) // Save user data
             })
             .catch((err) => {
                 console.error('Failed to fetch user data:', err)
                 navigate('/login') // Redirect on error
             })
-    }, [navigate])
+    }, [])
 
     if (!user) return <div>Loading...</div>
 
