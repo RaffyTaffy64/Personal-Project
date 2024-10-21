@@ -1,6 +1,8 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import '../index.css'
+import SPARKlogo from '../assets/SPARKlogo.png'
+import DevMountainLogo from '../assets/DevMountainLogo.png'
 
 const Home = () => {
     const navigate = useNavigate()
@@ -8,10 +10,15 @@ const Home = () => {
     return (
         <div className="home-container">
             <header className="header">
-                <img src="path_to_logo_image" alt="DevMountain Logo" className="logo" />
+                <div>
+                    <img src={DevMountainLogo} alt="DevMountain Logo" className="logo" />
+                </div>
+                <br/>
+                <div>
+                    <img src={SPARKlogo} alt="Spark Logo" className="logo" />
+                </div>
             </header>
             <div className="main-content">
-                <h1 className="spark-heading">SPARK</h1>
                 <p className="event-info">DevMountain <span className="live-text">LIVE</span> 2024<br />Developers Convention</p>
                 <div className="button-group">
                     <button onClick={() => navigate('/register')} className="btn register-btn">Register</button>
