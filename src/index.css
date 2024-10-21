@@ -143,14 +143,40 @@ button:focus-visible {
   color: white;
 }
 
+/* Add this to your CSS file */
 .form-container {
-  background: rgba(0, 0, 0, 0.7);
-  padding: 40px;
-  border-radius: 10px;
-  width: 90%;
-  max-width: 500px;
-  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url('./assets/BackgroundImage.png');
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  position: relative; /* Enables overlay positioning */
 }
+
+.form-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('./assets/ImageOverlappedRectangle.png');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.7; /* Adjust the opacity for the overlay image */
+  z-index: 1;
+}
+
+.form-container * {
+  position: relative;
+  z-index: 2;
+  color: white; /* Optional: Color for form elements */
+}
+
 
 .register-form, .payment-form {
   display: flex;

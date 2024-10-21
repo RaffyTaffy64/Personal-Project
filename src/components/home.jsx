@@ -13,11 +13,10 @@ const Home = () => {
                 <div>
                     <img src={DevMountainLogo} alt="DevMountain Logo" className="logo" />
                 </div>
-                <br/>
+            </header>
                 <div>
                     <img src={SPARKlogo} alt="Spark Logo" className="logo" />
                 </div>
-            </header>
             <div className="main-content">
                 <p className="event-info">DevMountain <span className="live-text">LIVE</span> 2024<br />Developers Convention</p>
                 <div className="button-group">

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import '../index.css'
+import SPARKlogo from '../assets/SPARKlogo.png'
 
 const Login = () => {
     const [email, setEmail] = useState('')
@@ -22,13 +23,28 @@ const Login = () => {
     }
 
     return (
-        <form onSubmit={handleLogin}>
-            <label>Email:</label>
-            <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
-            <label>Password:</label>
-            <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
-            <button type="submit">Login</button>
-        </form>
+        <div className="form-container">
+            <img src={SPARKlogo} alt="Spark Logo" className="logo" />
+            <form onSubmit={handleLogin}>
+                <label>Email:</label>
+                <input 
+                    type="email" 
+                    value={email} 
+                    onChange={(e) => setEmail(e.target.value)} 
+                    required 
+                />
+                <br/>
+                <label>Password:</label>
+                <input 
+                    type="password" 
+                    value={password} 
+                    onChange={(e) => setPassword(e.target.value)} 
+                    required 
+                />
+                <br/>
+                <button type="submit">Login</button>
+            </form>
+        </div>
     )
 }
 
