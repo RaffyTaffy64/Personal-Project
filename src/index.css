@@ -143,7 +143,6 @@ button:focus-visible {
   color: white;
 }
 
-/* Add this to your CSS file */
 .form-container {
   display: flex;
   flex-direction: column;
@@ -174,7 +173,7 @@ button:focus-visible {
 .form-container * {
   position: relative;
   z-index: 2;
-  color: white; /* Optional: Color for form elements */
+  color: white;
 }
 
 
@@ -195,7 +194,7 @@ input, select {
   border-radius: 8px;
   border: none;
   outline: none;
-  background: #f0f0f0;
+  background: #85858585;
   color: black;
 }
 
