@@ -48,7 +48,7 @@ console.log(events)
     }
 
     return (
-        <div>
+        <div className="form-container">
             <h1>Available Events</h1>
             <ul>
                 {events.map((event) => (
